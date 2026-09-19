@@ -50,10 +50,10 @@ $$
 \frac1{3^b}\left(1-\frac13\right)=\frac{2}{3^{b+1}} .
 $$
 
-For $B\ge 0$ let $T_B=\lbrace n : v_3(n)>B\rbrace$. This is exactly the set of multiples of $3^{B+1}$, so its density is $3^{-(B+1)}$. Writing $A_0(x)=\#\lbrace n\le x : n\in A_0\rbrace$, we get
+For $B\ge 0$ let $T_B=\lbrace n : v_3(n)>B\rbrace$. This is exactly the set of multiples of $3^{B+1}$, so its density is $3^{-(B+1)}$. Writing $A_0(x)=\operatorname{card}\lbrace  n\le x : n\in A_0\rbrace$, we get
 
 $$
-\left| A_0(x)-\#\lbrace n\le x : v_3(n)\in\lbrace 0,2,4,\dots\rbrace,\ v_3(n)\le B\rbrace\right|\le \frac{x}{3^{B+1}} .
+\left| A_0(x)-\operatorname{card}\lbrace  n\le x : v_3(n)\in\lbrace 0,2,4,\dots\rbrace,\ v_3(n)\le B\rbrace\right|\le \frac{x}{3^{B+1}} .
 $$
 
 The finite union on the right has density $\sum_{b\le B,\ b\text{ even}} \frac{2}{3^{b+1}}$. So the upper and lower densities of $A_0$ differ from this finite sum by at most $3^{-(B+1)}$. Letting $B\to\infty$:
@@ -83,13 +83,13 @@ $$
 For fixed $q$, the numbers $2^a3^bq$ form a grid indexed by $(a,b)$, called the **fiber** of $q$. The number $n=2^a3^bq$ sits at $(a,b)$, its double $2n$ at $(a+1,b)$, and its triple $3n$ at $(a,b+1)$. So $A$ is admissible if and only if, for all $a,b\ge0$ and $q\in Q$,
 
 $$
-X_{a,b}(q)\,X_{a+1,b}(q)\,X_{a,b+1}(q)=0. \qquad (\star)
+X_{a,b}(q)X_{a+1,b}(q)X_{a,b+1}(q)=0. \qquad (\star)
 $$
 
 The proof has two steps:
 
 1. On every fiber, the weighted sum $\sum_{a,b} X_{a,b}(q)/(2^a3^b)$ is at most $9/4$. The total weight of a full fiber is $\sum_{a,b}2^{-a}3^{-b}=2\cdot\frac32=3$, so an admissible set fills at most $\frac{9/4}{3}=\frac34$ of it.
-2. Summing over $q\in Q$ with harmonic weights $1/q$ gives $\sum_{n\le N,\,n\in A}\frac1n\le\frac34\log N+O(1)$.
+2. Summing over $q\in Q$ with harmonic weights $1/q$ gives $\sum_{n\le N,\ n\in A}\frac1n\le\frac34\log N+O(1)$.
 
 ---
 
@@ -98,7 +98,7 @@ The proof has two steps:
 Fix $q\in Q$ and write $x_{a,b}=X_{a,b}(q)\in\lbrace0,1\rbrace$. For each $b\ge0$ define
 
 $$
-c_b=\sum_{a\ge0}2^{-a}x_{a,b},\qquad W_b=\sum_{a\ge0}2^{-a}x_{a,b}\,x_{a+1,b}.
+c_b=\sum_{a\ge0}2^{-a}x_{a,b},\qquad W_b=\sum_{a\ge0}2^{-a}x_{a,b}x_{a+1,b}.
 $$
 
 Clearly $0\le c_b\le 2$ and $W_b\ge 0$.
@@ -205,7 +205,7 @@ $$
 Let
 
 $$
-H_Q(N)=\sum_{\substack{q\le N\\ q\in Q}}\frac1q .
+H_Q(N)=\sum_{q\le N,\ q\in Q}\frac1q .
 $$
 
 ### Lemma 5
@@ -233,19 +233,19 @@ $$
 Let $A$ be admissible and set
 
 $$
-D_N=\sum_{\substack{n\le N\\ n\in A}}\frac1n .
+D_N=\sum_{n\le N,\ n\in A}\frac1n .
 $$
 
 Using $n=2^a3^bq$ with $q\in Q$,
 
 $$
-D_N=\sum_{\substack{q\le N\\ q\in Q}}\frac1q\sum_{\substack{a,b\ge0\\ 2^a3^bq\le N}}\frac{X_{a,b}(q)}{2^a3^b}.
+D_N=\sum_{q\le N,\ q\in Q}\frac1q\sum_{a,b\ge0,\ 2^a3^bq\le N}\frac{X_{a,b}(q)}{2^a3^b}.
 $$
 
 All terms are nonnegative, so we may drop the restriction $2^a3^bq\le N$ in the inner sum, and then apply Proposition 4:
 
 $$
-D_N\le\sum_{\substack{q\le N\\ q\in Q}}\frac1q\cdot\frac94=\frac94H_Q(N)=\frac94\left(\frac13\log N+O(1)\right).
+D_N\le\sum_{q\le N,\ q\in Q}\frac1q\cdot\frac94=\frac94H_Q(N)=\frac94\left(\frac13\log N+O(1)\right).
 $$
 
 Hence, for every $N\ge 1$,
@@ -260,13 +260,13 @@ where the $O(1)$ is an absolute constant, independent of $A$.
 
 ## 6. From logarithmic sums to natural density
 
-Let $A(t)=\#\lbrace n\le t : n\in A\rbrace$. By Abel summation,
+Let $A(t)=\operatorname{card}\lbrace  n\le t : n\in A\rbrace$. By Abel summation,
 
 $$
-D_N=\frac{A(N)}{N}+\int_1^N\frac{A(t)}{t^2}\,dt .
+D_N=\frac{A(N)}{N}+\int_1^N\frac{A(t)}{t^2}\ dt .
 $$
 
-**Case 1: the density exists.** Suppose $d(A)=\lim_{t\to\infty}A(t)/t$ exists. Then $A(N)/N\to d(A)$ and $\int_1^N A(t)t^{-2}\,dt=d(A)\log N+o(\log N)$, so
+**Case 1: the density exists.** Suppose $d(A)=\lim_{t\to\infty}A(t)/t$ exists. Then $A(N)/N\to d(A)$ and $\int_1^N A(t)t^{-2}\ dt=d(A)\log N+o(\log N)$, so
 
 $$
 D_N=d(A)\log N+o(\log N).
