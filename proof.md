@@ -50,10 +50,10 @@ $$
 \frac1{3^b}\left(1-\frac13\right)=\frac{2}{3^{b+1}} .
 $$
 
-For $B\ge 0$ let $T_B=\lbrace n : v_3(n)>B\rbrace$. This is exactly the set of multiples of $3^{B+1}$, so its density is $3^{-(B+1)}$. Writing $A_0(x)=\operatorname{card}\lbrace  n\le x : n\in A_0\rbrace$, we get
+For $B\ge 0$ let $T_B=\lbrace n : v_3(n)>B\rbrace$. This is exactly the set of multiples of $3^{B+1}$, so its density is $3^{-(B+1)}$. Writing $A_0(x)=\mathrm{card}\lbrace  n\le x : n\in A_0\rbrace$, we get
 
 $$
-\left| A_0(x)-\operatorname{card}\lbrace  n\le x : v_3(n)\in\lbrace 0,2,4,\dots\rbrace,\ v_3(n)\le B\rbrace\right|\le \frac{x}{3^{B+1}} .
+\left| A_0(x)-\mathrm{card}\lbrace  n\le x : v_3(n)\in\lbrace 0,2,4,\dots\rbrace,\ v_3(n)\le B\rbrace\right|\le \frac{x}{3^{B+1}} .
 $$
 
 The finite union on the right has density $\sum_{b\le B,\ b\text{ even}} \frac{2}{3^{b+1}}$. So the upper and lower densities of $A_0$ differ from this finite sum by at most $3^{-(B+1)}$. Letting $B\to\infty$:
@@ -260,7 +260,7 @@ where the $O(1)$ is an absolute constant, independent of $A$.
 
 ## 6. From logarithmic sums to natural density
 
-Let $A(t)=\operatorname{card}\lbrace  n\le t : n\in A\rbrace$. By Abel summation,
+Let $A(t)=\mathrm{card}\lbrace  n\le t : n\in A\rbrace$. By Abel summation,
 
 $$
 D_N=\frac{A(N)}{N}+\int_1^N\frac{A(t)}{t^2}\ dt .
